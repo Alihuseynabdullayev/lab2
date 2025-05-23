@@ -46,11 +46,21 @@
       cursor: pointer;
       font-size: 16px;
     }
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #2c3e50;
+      margin-bottom: 20px;
+    }
   </style>
 </head>
 <body>
+
   <center>
-    <img src="c:\Users\hp\Documents\WhatsApp Image 2025-04-11 at 20.26.24_e76928ab.jpg" alt="Şəklin yeri" class="profile-pic"><br>
+    <!-- Profil şəkli üçün lokal fayl yerinə online və ya müvafiq yol göstərilməlidir -->
+    <img src="https://via.placeholder.com/150" alt="Şəklin yeri" class="profile-pic"><br>
   </center>
 
   <div class="container">
@@ -74,7 +84,7 @@
     <div class="section">
       <button class="toggle-btn" onclick="toggleSection('experience')">İş Təcrübəsi</button>
       <div id="experience" class="dropdown-content">
-        <p><strong>Frontend Developer </strong></p>
+        <p><strong>Frontend Developer</strong></p>
         <ul>
           <li>Web saytların dizayn və inkişafı</li>
           <li>Mobil uyğun interfeyslərin yaradılması</li>
@@ -110,10 +120,14 @@
 
   <script>
     function toggleSection(id) {
-      const section = document.getElementById(id
+      const section = document.getElementById(id);
+      if (section.style.display === "block") {
+        section.style.display = "none";
+      } else {
+        section.style.display = "block";
+      }
+    }
+  </script>
 
-
-
-
-
-
+</body>
+</html>
