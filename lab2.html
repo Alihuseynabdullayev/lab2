@@ -1,133 +1,73 @@
 <!DOCTYPE html>
 <html lang="az">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CV - Əlihüseyn Abdullayev</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 40px;
-      background-color: #f4f4f4;
-      color: #333;
-    }
-    .container {
-      max-width: 800px;
-      margin: auto;
-      background-color: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    h1, h2, button {
-      color: #2c3e50;
-    }
-    .section {
-      margin-bottom: 30px;
-    }
-    .skills span {
-      display: inline-block;
-      background-color: #3498db;
-      color: white;
-      padding: 5px 10px;
-      margin: 5px;
-      border-radius: 5px;
-    }
-    .dropdown-content {
-      display: none;
-      margin-top: 10px;
-    }
-    button.toggle-btn {
-      background-color: #2c3e50;
-      color: white;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-    .profile-pic {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #2c3e50;
-      margin-bottom: 20px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="light-mode">
 
-  <center>
-    <!-- Profil şəkli üçün lokal fayl yerinə online və ya müvafiq yol göstərilməlidir -->
-    <img src="https://via.placeholder.com/150" alt="Şəklin yeri" class="profile-pic"><br>
-  </center>
+  <div class="theme-toggle">
+    <label>
+      <input type="checkbox" id="modeSwitch" />
+      🌗 Rejim dəyiş
+    </label>
+  </div>
 
   <div class="container">
-    <h1>Əlihüseyn Abdullayev</h1>
-    <p><strong>Email:</strong> alihuseynabdullayev610@gmail.com | <strong>Telefon:</strong> +994 51 514 20 66</p>
+    <div class="profile">
+      <img id="profileImg" src="profil.jpg" alt="Profil şəkli" />
+      <input type="file" id="imageUpload" accept="image/*" />
+      <p><strong>Əlihüseyn Abdullayev</strong></p>
+      <p>Email: alihuseynabdullayev610@gmail.com</p>
+      <p>Telefon: +994 51 514 20 66</p>
+    </div>
 
-    <div class="section">
-      <button class="toggle-btn" onclick="toggleSection('about')">Haqqımda</button>
-      <div id="about" class="dropdown-content">
-        <p>Mən Web HTML, CSS və JavaScript, Python, C++ sahəsində biliklərim var və daim inkişaf edirəm. Həm də kuryer kimi işləyirəm.</p>
+    <!-- Accordion Bölmələr -->
+    <div class="accordion">
+      <input type="checkbox" id="about-toggle">
+      <label for="about-toggle">Haqqımda</label>
+      <div class="content">
+        Mən Web HTML, CSS və JavaScript, Python, C++ sahəsində biliklərim var və daim inkişaf edirəm.
       </div>
     </div>
 
-    <div class="section">
-      <button class="toggle-btn" onclick="toggleSection('education')">Təhsil</button>
-      <div id="education" class="dropdown-content">
-        <p><strong>Azərbaycan Texniki Universiteti</strong> – İnformasiya Təhlükəsizliyi (2024 - 2029)</p>
+    <div class="accordion">
+      <input type="checkbox" id="education-toggle">
+      <label for="education-toggle">Təhsil</label>
+      <div class="content">
+        Azərbaycan Texniki Universiteti – İnformasiya Təhlükəsizliyi (2024 - 2029)
       </div>
     </div>
 
-    <div class="section">
-      <button class="toggle-btn" onclick="toggleSection('experience')">İş Təcrübəsi</button>
-      <div id="experience" class="dropdown-content">
-        <p><strong>Frontend Developer</strong></p>
-        <ul>
-          <li>Web saytların dizayn və inkişafı</li>
-          <li>Mobil uyğun interfeyslərin yaradılması</li>
-          <li>HTML, CSS və JavaScript istifadə edilərək layihələrin hazırlanması</li>
-        </ul>
-        <p><strong>Kuryer</strong></p>
-        <ul>
-          <li>Bolt vasitəsilə yemək çatdırılması</li>
-          <li>Metroyla stansiyalara boyunbağıların çatdırılması</li>
-        </ul>
+    <div class="accordion">
+      <input type="checkbox" id="experience-toggle">
+      <label for="experience-toggle">İş Təcrübəsi</label>
+      <div class="content">
+        Frontend Developer: Web saytların dizayn və inkişafı.<br>
+        Kuryer: Bolt, metro çatdırılmaları.
       </div>
     </div>
 
-    <div class="section">
-      <button class="toggle-btn" onclick="toggleSection('skills')">Bacarıqlar</button>
-      <div id="skills" class="dropdown-content skills">
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
-        <span>Python</span>
-        <span>C++</span>
+    <div class="accordion">
+      <input type="checkbox" id="skills-toggle">
+      <label for="skills-toggle">Bacarıqlar</label>
+      <div class="content">
+        HTML, CSS, JavaScript, Python, C++
       </div>
     </div>
 
-    <div class="section">
-      <button class="toggle-btn" onclick="toggleSection('contact')">Əlaqə</button>
-      <div id="contact" class="dropdown-content">
-        <p><strong>Ünvan:</strong> Bakı, Azərbaycan, Xətai rayonu</p>
-        <p><strong>İnstagram:</strong> alihuseyn.aa</p>
+    <div class="accordion">
+      <input type="checkbox" id="contact-toggle">
+      <label for="contact-toggle">Əlaqə</label>
+      <div class="content">
+        Bakı, Azərbaycan, Xətai rayonu.<br>
+        Instagram: alihuseyn.aa
       </div>
     </div>
   </div>
 
-  <script>
-    function toggleSection(id) {
-      const section = document.getElementById(id);
-      if (section.style.display === "block") {
-        section.style.display = "none";
-      } else {
-        section.style.display = "block";
-      }
-    }
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
